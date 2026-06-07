@@ -52,15 +52,22 @@ const Index = () => {
     "Git (Basic)"
   ];
 
-  const projects = [
-    {
-      title: "NLP Chatbot using FastAPI",
-      description:
-        "Developed a backend chatbot using NLP techniques such as tokenization, stopword removal, and TF-IDF vectorization. It uses cosine similarity to match user queries and integrates Wikipedia API as a fallback for unknown queries.",
-      tech: ["FastAPI", "Python", "NLTK", "TF-IDF", "Scikit-learn"],
-      link: "https://github.com/usharani963/nlp-chatbot"
-    }
-  ];
+ const projects = [
+  {
+    title: "MindHaven AI",
+    description:
+      "AI-powered mental wellness assistant with chatbot support, mood tracking, personalized guidance, and mental health resources using LLMs.",
+    tech: ["Python", "FastAPI", "LangChain", "Ollama", "Streamlit"],
+    link: "https://github.com/usharani963"
+  },
+  {
+    title: "MERN Chat Application",
+    description:
+      "Real-time chat application with user authentication, instant messaging, image sharing, typing indicators, and Socket.IO integration.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO"],
+    link: "https://github.com/usharani963"
+  }
+];
 
   return (
     <div className="min-h-screen bg-white">
@@ -70,13 +77,16 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-teal-600">Usharani</h1>
 
-          <div className="space-x-6 hidden md:flex">
-            <a href="#home" className="hover:text-teal-600">Home</a>
-            <a href="#about" className="hover:text-teal-600">About</a>
-            <a href="#skills" className="hover:text-teal-600">Skills</a>
-            <a href="#projects" className="hover:text-teal-600">Projects</a>
-            <a href="#contact" className="hover:text-teal-600">Contact</a>
-          </div>
+         <div className="space-x-6 hidden md:flex">
+  <a href="#home" className="hover:text-teal-600">Home</a>
+  <a href="#about" className="hover:text-teal-600">About</a>
+  <a href="#skills" className="hover:text-teal-600">Skills</a>
+  <a href="#certifications" className="hover:text-teal-600">Certifications</a>
+  <a href="#projects" className="hover:text-teal-600">Projects</a>
+  <a href="#internship" className="hover:text-teal-600">Internship</a>
+  <a href="#achievements" className="hover:text-teal-600">Achievements</a>
+  <a href="#contact" className="hover:text-teal-600">Contact</a>
+</div>
         </div>
       </nav>
 
@@ -96,7 +106,31 @@ const Index = () => {
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
               </Button>
+
             </a>
+            <div className="flex gap-4 mt-4">
+  <a
+    href="https://github.com/usharani963"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button variant="outline">
+      <Github className="mr-2 h-4 w-4" />
+      GitHub
+    </Button>
+  </a>
+
+  <a
+    href="https://linkedin.com/in/meenugausharani963"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button variant="outline">
+      <Linkedin className="mr-2 h-4 w-4" />
+      LinkedIn
+    </Button>
+  </a>
+</div>
           </div>
 
           <div className="flex justify-center">
@@ -116,15 +150,13 @@ const Index = () => {
             <CardContent className="p-10 grid lg:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4">About Me</h2>
-                <p className="text-gray-600">
-                  I am a third-year B.Tech student passionate about software development and problem-solving.
-                  I have been working on backend systems, NLP projects, and improving my DSA skills.
-                </p>
+                 <p className="text-gray-600">
+      AI and Software Engineering enthusiast pursuing B.Tech in Computer Science
+      with specialization in Artificial Intelligence. Skilled in Java, Python,
+      React, FastAPI, MongoDB, and Machine Learning. Experienced in developing
+      AI-powered applications, real-time systems, and full-stack web solutions.
+    </p>
               </div>
-              <img
-                src="/assets/meenuga.jpeg"
-                className="w-60 rounded-lg shadow"
-              />
             </CardContent>
           </Card>
         </div>
@@ -139,40 +171,114 @@ const Index = () => {
           ))}
         </div>
       </section>
+<section id="certifications" className="py-20 px-8 bg-gray-50">
+  <h2 className="text-3xl font-bold text-center mb-10">
+    Certifications
+  </h2>
 
-      {/* Certifications */}
-      <section className="py-20 px-8 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center mb-10">Certifications</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Flipkart Runway Season 5</CardTitle>
-              <CardDescription>Participant</CardDescription>
-            </CardHeader>
-          </Card>
+  <div className="grid md:grid-cols-2 gap-6">
 
-          <Card>
-            <CardHeader>
-              <CardTitle>MongoDB Python Developer Path</CardTitle>
-              <CardDescription>MongoDB University</CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
-      </section>
+    <Card>
+      <CardHeader>
+        <CardTitle>AWS Certified Cloud Practitioner</CardTitle>
+        <CardDescription>
+          Globally Recognized Certification by Amazon Web Services (AWS)
+        </CardDescription>
+      </CardHeader>
+    </Card>
+
+    <Card>
+      <CardHeader>
+        <CardTitle>AWS Certified AI Practitioner</CardTitle>
+        <CardDescription>
+          Globally Recognized Certification by Amazon Web Services (AWS)
+        </CardDescription>
+      </CardHeader>
+    </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Java Programming</CardTitle>
+    <CardDescription>
+      Successfully completed Java Programming certification through CodeTantra
+    </CardDescription>
+  </CardHeader>
+</Card>
+   
+
+    <Card>
+      <CardHeader>
+        <CardTitle>Tata Data Visualization</CardTitle>
+        <CardDescription>
+          Forage Virtual Experience Program
+        </CardDescription>
+      </CardHeader>
+    </Card>
+
+    <Card>
+      <CardHeader>
+        <CardTitle>Flipkart Runway Season 5</CardTitle>
+        <CardDescription>
+          Participant
+        </CardDescription>
+      </CardHeader>
+    </Card>
+
+  </div>
+</section>
 
       {/* Education */}
-      <section className="py-20 px-8">
-        <h2 className="text-3xl font-bold text-center mb-10">Education</h2>
-        <Card className="max-w-4xl mx-auto">
-          <CardContent className="p-6">
-            <h3 className="font-bold text-lg">
-              B.Tech – CSE (AI Specialization)
-            </h3>
-            <p className="text-teal-600">GPCET Kurnool</p>
-            <p className="text-gray-500">2023–2027</p>
-          </CardContent>
-        </Card>
-      </section>
+    {/* Education */}
+<section className="py-20 px-8">
+  <h2 className="text-3xl font-bold text-center mb-10">
+    Education
+  </h2>
+
+  <div className="max-w-4xl mx-auto space-y-6">
+
+    <Card>
+      <CardContent className="p-6">
+        <h3 className="font-bold text-lg">
+          B.Tech – CSE (AI Specialization)
+        </h3>
+        <p className="text-teal-600">
+          G. Pullaiah College of Engineering and Technology, Kurnool
+        </p>
+        <p className="text-gray-500">
+          2023 – 2027
+        </p>
+      </CardContent>
+    </Card>
+
+    <Card>
+      <CardContent className="p-6">
+        <h3 className="font-bold text-lg">
+          Intermediate (Class XII)
+        </h3>
+        <p className="text-teal-600">
+          KVR College for Girls, Kurnool, India
+        </p>
+        <p className="text-gray-500">
+          Completed: April 2023
+        </p>
+      </CardContent>
+    </Card>
+
+    <Card>
+      <CardContent className="p-6">
+        <h3 className="font-bold text-lg">
+          Secondary School Certificate (Class X)
+        </h3>
+        <p className="text-teal-600">
+          Indira Gandhi Memorial High School, Kurnool, India
+        </p>
+        <p className="text-gray-500">
+          Completed: April 2020
+        </p>
+      </CardContent>
+    </Card>
+
+  </div>
+</section>
 
       {/* Projects */}
       <section id="projects" className="py-20 px-8">
@@ -209,7 +315,68 @@ const Index = () => {
           ))}
         </div>
       </section>
+<section id="internship" className="py-20 px-8 bg-gray-50">
+  <h2 className="text-3xl font-bold text-center mb-10">
+    Internship Experience
+  </h2>
 
+  <Card>
+    <CardHeader>
+      <CardTitle>
+        AI & Machine Learning Intern – Rejolt Edtech Private Limited
+      </CardTitle>
+      <CardDescription>
+        September 2025 – February 2026 (6 Months)
+      </CardDescription>
+      <h4 className="font-semibold mb-3">
+  Project: Anomaly Detection in Network Activities Using Generative AI–Enhanced Hybrid Deep Learning
+</h4>
+    </CardHeader>
+    
+    <CardContent>
+      <ul className="list-disc pl-5 space-y-2 text-gray-600">
+        <li>
+          Developed an intelligent anomaly detection system to identify abnormal network behavior and potential cyber threats.
+        </li>
+        <li>
+          Built data preprocessing and feature engineering pipelines for network traffic analysis.
+        </li>
+        <li>
+          Implemented hybrid deep learning models to improve anomaly classification accuracy.
+        </li>
+        <li>
+          Explored Generative AI techniques for enhanced pattern analysis and threat detection support.
+        </li>
+        <li>
+          Integrated model predictions into a real-time monitoring workflow for continuous network analysis.
+        </li>
+        <li>
+          Generated classification outputs with confidence scores to assist security analysts in decision-making.
+        </li>
+      </ul>
+    </CardContent>
+  </Card>
+</section>
+
+
+          <section id="achievements" className="py-20 px-8 bg-gray-50">
+  <h2 className="text-3xl font-bold text-center mb-10">
+    Achievements
+  </h2>
+
+  <div className="grid md:grid-cols-2 gap-6">
+
+    <Card>
+      <CardHeader>
+        <CardTitle>TCS CodeVita Season 12</CardTitle>
+        <CardDescription>
+          Qualified for Round 2 with Global Rank 569.
+        </CardDescription>
+      </CardHeader>
+    </Card>
+  
+  </div>
+</section>
       {/* Contact */}
       <section id="contact" className="py-20 px-8 bg-gray-50">
         <h2 className="text-3xl font-bold text-center mb-10">Contact</h2>
@@ -230,7 +397,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-6 text-center bg-gray-800 text-white">
-        <p>© 2025 Meenuga Usharani</p>
+        <p>© 2026 Meenuga Usharani</p>
         <div className="flex justify-center gap-4 mt-2">
           <a href="https://github.com/usharani963"><Github /></a>
           <a href="https://linkedin.com/in/meenugausharani963"><Linkedin /></a>
