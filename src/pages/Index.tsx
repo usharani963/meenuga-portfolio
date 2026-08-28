@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 import { Github, Linkedin, Mail, Download, ExternalLink } from "lucide-react";
 
 const Index = () => {
@@ -30,16 +31,45 @@ const Index = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (isFormValid) {
-      setIsSubmitted(true);
-      toast({
-        title: "Message Sent!",
-        description: "Thanks! I'll get back to you soon.",
-      });
-    }
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!isFormValid) return;
+
+  try {
+    await emailjs.send(
+      "service_2nhoigr",
+      "template_l3n9gh2",
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      "J8eC9EQs1UjNQp6wo"
+    );
+
+    setIsSubmitted(true);
+
+    toast({
+      title: "Message Sent!",
+      description: "Thanks! I'll get back to you soon.",
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+
+    toast({
+      title: "Failed to send message",
+      description: "Please try again later.",
+    });
+  }
+};
 
   const skills = [
     "Java (OOP)",
@@ -378,23 +408,51 @@ const Index = () => {
   </div>
 </section>
       {/* Contact */}
-      <section id="contact" className="py-20 px-8 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center mb-10">Contact</h2>
+    <section id="contact" className="py-20 px-8 bg-gray-50">
+  <h2 className="text-3xl font-bold text-center mb-10">
+    Contact
+  </h2>
 
-        {isSubmitted ? (
-          <p className="text-center text-green-600">
-            Message Sent Successfully!
-          </p>
-        ) : (
-          <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
-            <Input placeholder="Name" onChange={(e) => handleInputChange("name", e.target.value)} />
-            <Input placeholder="Email" onChange={(e) => handleInputChange("email", e.target.value)} />
-            <Textarea placeholder="Message" onChange={(e) => handleInputChange("message", e.target.value)} />
-            <Button disabled={!isFormValid}>Send</Button>
-          </form>
-        )}
-      </section>
+  {isSubmitted ? (
+    <p className="text-center text-green-600">
+      Message Sent Successfully!
+    </p>
+  ) : (
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-xl mx-auto space-y-4"
+    >
+      <Input
+        placeholder="Name"
+        value={formData.name}
+        onChange={(e) =>
+          handleInputChange("name", e.target.value)
+        }
+      />
 
+      <Input
+        type="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={(e) =>
+          handleInputChange("email", e.target.value)
+        }
+      />
+
+      <Textarea
+        placeholder="Message"
+        value={formData.message}
+        onChange={(e) =>
+          handleInputChange("message", e.target.value)
+        }
+      />
+
+      <Button type="submit" disabled={!isFormValid}>
+        Send
+      </Button>
+    </form>
+  )}
+</section>
       {/* Footer */}
       <footer className="py-6 text-center bg-gray-800 text-white">
         <p>© 2026 Meenuga Usharani</p>
