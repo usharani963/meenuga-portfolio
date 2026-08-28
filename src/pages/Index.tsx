@@ -131,7 +131,7 @@ const Index = () => {
               B.Tech Student at GPCET Kurnool | Exploring Web Technologies, AI & Software Development
             </p>
 
-            <a href="/assets/resume.pdf" download>
+            <a href="/assets/Meenuga_USHARANI_RESUME.pdf" download>
               <Button className="bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-100 px-8 py-3">
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
